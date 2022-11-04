@@ -20,7 +20,7 @@ const Login = ({ theme }) => {
         saveUser(user);
       })
       .catch((error) => {
-        alert("error");
+        alert("No Internet MF");
       });
   };
 
