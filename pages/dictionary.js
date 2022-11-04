@@ -6,11 +6,12 @@ import { useRouter } from "next/router";
 const Dictionary = () => {
   const router = useRouter();
   const [inputValue, setInputValue] = useState("a");
-  const [debouncedValue] = useDebounce(inputValue, 2000);
+  const [debouncedValue] = useDebounce(inputValue, 1500);
   const [returnedData, setReturnedData] = useState();
   const [error, setError] = useState("");
   console.log(returnedData);
   useEffect(() => {
+    setError(false);
     axios
       .get(`https://api.dictionaryapi.dev/api/v2/entries/en/${debouncedValue}`)
       .then((data) => setReturnedData(data.data))
@@ -18,32 +19,29 @@ const Dictionary = () => {
   }, [debouncedValue]);
   return (
     <>
-      <div className="p-5 h-full">
+      <div className="p-5 h-[300vh]">
+        <div className="flex justify-center ">
+          <div className="form-control">
+            <div className="input-group">
+              <input
+                type="text"
+                placeholder="Search…"
+                className="input input-bordered"
+                onChange={(e) => setInputValue(e.target.value)}
+              />
+            </div>
+          </div>
+        </div>
+
         {error ? (
-          <div className="h-screen">
+          <div className="h-screen mt-2">
             <div className="grid place-content-center">
-              <h1 className="text-3xl">Error.. !found</h1>
-              <button className="btn mt-5" onClick={() => router.reload()}>
-                Refresh
-              </button>
+              <h1 className="text-3xl">Error.. found</h1>
             </div>
           </div>
         ) : (
           <>
-            <div className="flex justify-center ">
-              <div className="form-control">
-                <div className="input-group">
-                  <input
-                    type="text"
-                    placeholder="Search…"
-                    className="input input-bordered"
-                    onChange={(e) => setInputValue(e.target.value)}
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-8">
+            <div className="mt-8 overflow-x-auto">
               {returnedData?.map((list, i) => {
                 const { word, phonetic, meanings, sourceUrls } = list;
                 return (
@@ -67,7 +65,7 @@ const Dictionary = () => {
                                     part of Speech: {partOfSpeech}
                                   </span>
                                   <ul class="space-y-1 list-disc list-inside  ">
-                                    {definitions.map((item,i) => {
+                                    {definitions.map((item, i) => {
                                       return <li key={i}>{item.definition}</li>;
                                     })}
                                   </ul>

@@ -14,16 +14,11 @@ const Navbar = ({ themes, setTheme, theme }) => {
           <Link href="/">
             <a className="btn btn-ghost normal-case text-xl">ashish</a>
           </Link>
-          <button
-            className="btn btn-ghost normal-case text-xl mx-2"
-            onClick={() => router.back()}
-          >
+          <button className="btn btn-sm " onClick={() => router.back()}>
             Go Back
           </button>
           <div className="dropdown dropdown-end">
-            <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">
-              {theme}
-            </button>
+            <button className="btn btn-sm ml-1 ">{theme}</button>
             <ul
               tabIndex={0}
               className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
