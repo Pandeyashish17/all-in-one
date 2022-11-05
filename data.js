@@ -8,6 +8,10 @@ export const data = [
     path: "/instagram",
   },
   {
+    name: "urlshortener",
+    path: "/urlshortener",
+  },
+  {
     name: "weather",
     path: "/weather",
   },

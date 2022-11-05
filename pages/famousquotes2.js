@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
-const famousquotes2 = () => {
+const Index = () => {
   const [quotes, setQuotes] = useState(null);
   const [rand, setRand] = useState(null);
   useEffect(() => {
@@ -69,4 +69,4 @@ const famousquotes2 = () => {
   );
 };
 
-export default famousquotes2;
+export default Index;

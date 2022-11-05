@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-const famousquotes = () => {
+const Index = () => {
   const [text, setText] = useState(null);
   const [rand, setRand] = useState(1);
   useEffect(() => {
@@ -31,7 +31,10 @@ const famousquotes = () => {
         {text && (
           <>
             <p>{text}</p>
-            <button className="btn w-36 mt-4" onClick={() => setRand(Math.random())}>
+            <button
+              className="btn w-36 mt-4"
+              onClick={() => setRand(Math.random())}
+            >
               Refresh
             </button>
           </>
@@ -41,4 +44,4 @@ const famousquotes = () => {
   );
 };
 
-export default famousquotes;
+export default Index;
