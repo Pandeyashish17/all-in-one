@@ -64,57 +64,56 @@ const Instagram = () => {
   };
 
   useEffect(() => {
-    getInfo("ssssangha");
+    getInfo("instagram");
   }, []);
 
   return (
     <>
-      {userBio != null ? (
-        <>
-          <nav className=" px-4 py-2 ">
-            <div className="flex flex-wrap items-center justify-between md:justify-around">
-              {/* <!-- logo --> */}
-              <img
-                className="h-10"
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/150px-Instagram_logo.svg.png"
-                alt="instagram"
-              />
+      <nav className=" px-4 py-2 ">
+        <div className="flex flex-wrap items-center justify-between md:justify-around">
+          {/* <!-- logo --> */}
+          <img
+            className="h-10"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/150px-Instagram_logo.svg.png"
+            alt="instagram"
+          />
 
-              {/* <!-- search--> */}
-              <div className="relative sm:m-10 ">
-                <div className="form-control">
-                  <div className="input-group">
-                    <input
-                      type="text"
-                      placeholder="Search…"
-                      className="input input-bordered"
-                      onChange={(e) => setSearch(e.target.value)}
+          {/* <!-- search--> */}
+          <div className="relative sm:m-10 ">
+            <div className="form-control">
+              <div className="input-group">
+                <input
+                  type="text"
+                  placeholder="Search…"
+                  className="input input-bordered"
+                  onChange={(e) => setSearch(e.target.value)}
+                />
+                <button
+                  className="btn btn-square"
+                  onClick={() => getInfo(search)}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
                     />
-                    <button
-                      className="btn btn-square"
-                      onClick={() => getInfo(search)}
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
+                  </svg>
+                </button>
               </div>
             </div>
-          </nav>
-
+          </div>
+        </div>
+      </nav>
+      {userBio != null ? (
+        <>
           <main className=" bg-opacity-25">
             <div className="lg:w-8/12 lg:mx-auto mb-8">
               <header className="flex flex-wrap items-center p-4 md:py-8">

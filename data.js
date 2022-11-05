@@ -12,6 +12,14 @@ export const data = [
     path: "/weather",
   },
   {
+    name: "famousquotes",
+    path: "/famousquotes",
+  },
+  {
+    name: "famousquotes2",
+    path: "/famousquotes2",
+  },
+  {
     name: "generateexcuses",
     path: "/generateexcuses",
   },
