@@ -4,6 +4,10 @@ export const data = [
     path: "/dictionary",
   },
   {
+    name: "instagram",
+    path: "/instagram",
+  },
+  {
     name: "weather",
     path: "/weather",
   },
