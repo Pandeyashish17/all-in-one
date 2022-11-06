@@ -121,6 +121,12 @@ const Index = () => {
             </button>
           </div>
         </div>
+        <div>
+          <h2>
+            Works Locally but for production, have to buy api key, so i am not
+            gonna do that
+          </h2>
+        </div>
         {news?.totalResults != 0 ? (
           <div class="p-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-5">
             {news?.articles?.map((item, i) => (
