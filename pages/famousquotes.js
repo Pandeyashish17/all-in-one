@@ -24,7 +24,6 @@ const Index = () => {
         console.error(error);
       });
   }, [rand]);
-  console.log(text);
   return (
     <>
       <div className="grid place-content-center px-6 h-screen">
